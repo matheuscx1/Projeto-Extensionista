@@ -1,0 +1,51 @@
+
+
+<div class="cadastro-container">
+  <h2>Cadastro de Usuário</h2>
+  <form [formGroup]="cadastro" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input id="name" type="text" formControlName="nome">
+
+      <div *ngIf="cadastro.get('nome')?.errors?.['required']  && cadastro.get('nome')?.touched">
+        Nome obrigatório
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email">
+
+      <div *ngIf="cadastro.get('email')?.errors?.['required'] && cadastro.get('email')?.touched">
+        Campo obrigatório
+      </div>
+      <div *ngIf="cadastro.get('email')?.errors?.['emailInvalido']  && cadastro.get('email')?.touched">
+        Email inválido. Por favor, adicione um email valido.
+      </div>
+
+
+      <div *ngIf="mensagemErro" class="alert alert-danger">
+        {{ mensagemErro }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" formControlName="senha">
+
+      <div *ngIf="cadastro.get('senha')?.errors?.['required'] && cadastro.get('senha')?.touched">
+        Campo Obrigatório
+      </div>
+
+      <div *ngIf="cadastro.get('senha')?.errors?.['minlength']">
+        Senha muito curta
+      </div>
+
+      </div>
+    <button type="submit" [disabled]="cadastro.invalid">Cadastrar</button>
+  </form>
+
+  <p>Já tem uma conta? <a routerLink="/login">Faça login</a></p>
+</div>
+
