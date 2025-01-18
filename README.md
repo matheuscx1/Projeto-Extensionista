@@ -5,8 +5,8 @@ Este projeto foi desenvolvido com o objetivo de conectar pessoas e instituiçõe
 
 Tecnologias Utilizadas:
 Frontend: Angular
-Backend (planejado para integração futura): API RESTful (Spring Boot)
-Banco de Dados: MySQL (para integração futura)
+Backend API RESTful Spring Boot
+Banco de Dados: MySQL para Banco de Dados
 Outros: HTML, CSS, JavaScript, TypeScript
 
 Funcionalidades:
