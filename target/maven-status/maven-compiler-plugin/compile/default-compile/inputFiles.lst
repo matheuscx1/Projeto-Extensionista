@@ -1,0 +1,14 @@
+D:\Desktop\demo\src\main\java\com\conexaoBanco\conexaoBancoApplication.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\configuracao\configuracaoSenha.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\configuracao\corsConfig.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\controller\InstituicaoController.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\controller\usuarioController.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\instituicao\Instituicao.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\instituicao\InstituicaoRepository.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\instituicaoService\InstituicaoService.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\login\Login.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\seguranca\Seguranca.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\seguranca\segurancaInstituicao.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\service\usuarioService.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\usuario\Usuario.java
+D:\Desktop\demo\src\main\java\com\conexaoBanco\usuario\usuarioRepository.java

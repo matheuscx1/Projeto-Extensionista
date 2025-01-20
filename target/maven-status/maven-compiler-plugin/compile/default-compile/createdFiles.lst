@@ -1,0 +1,14 @@
+com\conexaoBanco\configuracao\corsConfig.class
+com\conexaoBanco\seguranca\segurancaInstituicao.class
+com\conexaoBanco\usuario\usuarioRepository.class
+com\conexaoBanco\instituicao\InstituicaoRepository.class
+com\conexaoBanco\configuracao\configuracaoSenha.class
+com\conexaoBanco\conexaoBancoApplication.class
+com\conexaoBanco\instituicaoService\InstituicaoService.class
+com\conexaoBanco\seguranca\Seguranca.class
+com\conexaoBanco\instituicao\Instituicao.class
+com\conexaoBanco\controller\usuarioController.class
+com\conexaoBanco\usuario\Usuario.class
+com\conexaoBanco\service\usuarioService.class
+com\conexaoBanco\controller\InstituicaoController.class
+com\conexaoBanco\login\Login.class

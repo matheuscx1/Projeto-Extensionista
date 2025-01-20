@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="logo">
+    <h1>A Conexão Solidária</h1>
+  </div>
+
+  <div class="mobile-menu" (click)="toggleMenu()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+  <nav class="nav"  [ngClass]="{'active': menuOpen}">
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a (click)="doeAgora()">Doe Agora</a></li>
+    </ul>
+  </nav>
+</header>

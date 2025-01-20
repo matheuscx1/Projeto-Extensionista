@@ -1,0 +1,94 @@
+<div class="instituicao-container">
+  <h1>Instituicoes Localizadas no Espirito Santo</h1>
+
+
+  <div class="mostrarInstituicao">
+    <div *ngIf="instituicoes.length > 0 ">
+      <div *ngFor="let instituicao of instituicoes">
+        <img [src]="'http://localhost:8080/uploads/' + instituicao.imagemNome" class="instituicao-imagem">
+        <p>{{instituicao.nome}}</p>
+        <p>{{instituicao.endereco}}</p>
+        <button (click)="irParaSite(instituicao.site)">Doe agora</button>
+        <button class="botaoExcluir"  (click)="excluirInstituicao(instituicao.id)">Excluir</button>
+      </div>
+    </div>
+  </div>
+  <button (click)="mostrarFormularioModal()">Registre sua instituição</button>
+
+
+
+  <form *ngIf="mostrarFormulario" [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="modal">
+    <div class="modal-content">
+      <span class="close-button" (click)="fecharFormulario()">&times;</span>
+
+
+      <div>
+        <p>Escolha a imagem da instituição</p>
+        <label for="imagem" class="custom-file-label">Clique aqui e escolha uma imagem</label>
+        <input id="imagem" type="file" formControlName="imagem" (change)="onImage($event)" accept="image/png, image/jpeg, image/jpg"/>
+      </div>
+
+      <div *ngIf="imagemPreview">
+        <img [src]="imagemPreview" alt="Imagem escolhida" width="200px" />
+      </div>
+
+      <div *ngIf="formulario.get('imagem')?.touched && formulario.get('imagem')?.invalid" class="error">
+        <div *ngIf="formulario.get('imagem')?.errors?.['required']">
+          Por favor, escolha uma imagem.
+        </div>
+
+        <div *ngIf="formulario.get('imagem')?.errors?.['invalidFileType']">
+          Apenas arquivos JPEG ou PNG são permitidos.
+        </div>
+
+        <div *ngIf="formulario.get('imagem')?.errors?.['fileTooLarge']">
+          O arquivo é muito grande. O tamanho máximo permitido é 2MB.
+        </div>
+
+      </div>
+
+
+    <div >
+      <label for="nome">Nome Da instituição</label>
+      <input id="nome" formControlName="nome" type="text">
+      <div *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched" class="error-campo">
+       Por favor, preencha este campo.
+      </div>
+    </div>
+
+    <div >
+      <label for="endereco">Endereço Da instituição</label>
+      <input id="endereco" formControlName="endereco" type="text">
+      <div *ngIf="formulario.get('endereco')?.invalid && formulario.get('endereco')?.touched" class="error-campo">
+        Por favor, preencha este campo.
+      </div>
+    </div>
+
+    <div >
+      <label for="site">Site da Instituição</label>
+      <input id="site" formControlName="site" type="text">
+      <div *ngIf="formulario.get('site')?.invalid && formulario.get('site')?.touched"  class="error-campo">
+        Escreva um site valido
+      </div>
+    </div>
+
+    <button type="submit">Registrar</button>
+  </div>
+  </form>
+
+
+
+  <div *ngIf="formEnviado" class="modal sucesso">
+    <div class="modal-content">
+      <span class="close-button" (click)="fecharMensagem()">&times;</span>
+      <p>Instituição cadastrada com sucesso!</p>
+    </div>
+  </div>
+  <div *ngIf="formErro" class="modal erro">
+    <div class="modal-content">
+      <span class="close-button" (click)="fecharMensagem()">&times;</span>
+      <p>Ocorreu um erro ao enviar o formulário. Verifique os campos e tente novamente.</p>
+    </div>
+  </div>
+
+</div>
